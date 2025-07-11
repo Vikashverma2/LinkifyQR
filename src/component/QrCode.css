@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Vikash Verma */
+
+body, html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.app-container h1 {
+  color: #2d87f0;
+  margin-bottom: 20px;
+}
+
+.qrImage {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.input-label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 500;
+  color: #555;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #2d87f0;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #1b5fbf;
+  box-shadow: 0 0 5px rgba(29, 112, 222, 0.3);
+}
+
+.buttonMobileView {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.generate-button,
+.download-button {
+  flex: 1 1 auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.generate-button {
+  background-color: #2d87f0;
+  color: #fff;
+}
+
+.generate-button:hover {
+  background-color: #1b5fbf;
+  transform: translateY(-2px);
+}
+
+.download-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.download-button:hover {
+  background-color: #1e7e34;
+  transform: translateY(-2px);
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.copyright a {
+  color: #2d87f0;
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+
+
+  .buttonMobileView {
+    flex-direction: column;
+  }
+
+  .generate-button,
+  .download-button {
+    width: 100%;
+  }
+}

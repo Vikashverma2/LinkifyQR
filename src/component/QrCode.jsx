@@ -29,22 +29,28 @@ const QrCode = () => {
   }
 
   function downloadQR() {
-    if (!img) return;
+  if (!img) return;
 
-    fetch(img)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "qrCode.png";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      })
-      .catch((error) => {
-        console.log("Error in downloading QR code:", error);
-      });
-  }
+  fetch(img)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "qrCode.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+    
+      setQrData("");
+      setQrSize("200");
+      setImg("");
+    })
+    .catch((error) => {
+      console.log("Error in downloading QR code:", error);
+    });
+}
+
 
   return (
     <div className="qr-page-container">

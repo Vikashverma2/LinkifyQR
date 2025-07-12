@@ -30,15 +30,19 @@ const UrlShortener = () => {
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(shortUrl).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+const handleCopy = () => {
+  navigator.clipboard.writeText(shortUrl).then(() => {
+    setCopied(true);
+    setLongUrl(""); 
+    setTimeout(() => setCopied(false), 2000);
+  });
+};
+
 
   return (
     <div className="tool-card">
+
+        <h2>URL Shortener</h2>
       <input
         type="text"
         placeholder="Paste Your Link"

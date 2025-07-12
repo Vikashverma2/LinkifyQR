@@ -45,7 +45,7 @@ html {
 }
 
 
-/* Shortcut page layout */
+
 .shortcut-page {
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +103,7 @@ html {
   color: #888;
 }
 
-/* Right section container */
+
 .right-section {
   background: #ffffff;
   padding: 30px;
@@ -113,7 +113,11 @@ html {
   width: 100%;
   text-align: center;
 }
-/* Shared input style remains the same */
+
+
+/* URL Generator */
+
+
 .tool-card input[type="text"] {
   width: 100%;
   padding: 14px 18px;
@@ -185,9 +189,9 @@ html {
 }
 
 .footer-text {
-  margin-top: auto; /* Pushes footer to bottom if using flex column layout */
+  margin-top: auto; 
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 13px;
   color: #666;
   background-color: #f9f9f9;
@@ -204,7 +208,7 @@ html {
 
 .footer-text a:hover {
   color: #1b5fbf;
-  text-decoration: underline;
+  
 }
 
 

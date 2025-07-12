@@ -1,0 +1,132 @@
+.shortcut-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+}
+
+.left-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  margin-right: 20px;
+}
+
+.left-section h1 {
+  font-size: 42px;
+  margin: 5px 0 20px;
+}
+
+.left-section h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #555;
+}
+
+.left-section p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.main-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #333;
+}
+
+.note-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.right-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.input-card input {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 8px;
+}
+
+.shorten-btn {
+  padding: 12px 14px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.short-link-display {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.short-link-display strong {
+  display: block;
+  font-size: 16px;
+  color: #222;
+}
+
+.sub-link {
+  font-size: 12px;
+  color: #888;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 10px;
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background: #ddd;
+}
+
+.trusted {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.trusted p {
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.logos span {
+  margin: 0 10px;
+  color: #aaa;
+  font-size: 14px;
+}

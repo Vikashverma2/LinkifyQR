@@ -28,7 +28,6 @@ const QrCode = () => {
       setLoading(false);
     }
   }
-
   function downloadQR() {
     if (!img) return;
 

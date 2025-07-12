@@ -1,84 +1,56 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import UrlShortener from "../component/UrlShortener";
+import QrCodeGenerator from "../component/QrCode";
 import "./HomePage.css";
 
-function ShortcutPage() {
-  const [longUrl, setLongUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState("");
-  const [copied, setCopied] = useState(false);
-
-  const shortenUrl = () => {
-    if (!longUrl.trim()) return;
-
-    const randomId = Math.random().toString(36).substring(2, 8);
-    const fakeShort = `https://short.ly/${randomId}`;
-
-    setShortUrl(fakeShort);
-    setCopied(false);
-  };
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(shortUrl).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+function Homepage() {
+  const [activeTool, setActiveTool] = useState("url");
 
   return (
     <div className="homepage">  
-    <div className="">
-        <button>URL Shorter</button>
-        <button>QR Code Generator</button>
-    </div>
-    <div className="shortcut-page">
+      <div className="shortcut-page">
 
-        
-      <div className="left-section">
-        <h2>Meet Your New</h2>
-        <h1>URL Shortcut!</h1>
-        <p>
-          Take control of your links with our all-in-one platform designed to
-          simplify sharing and management.
-        </p>
-        
-        <p className="note-text">Start for Free! No Card Required</p>
-      </div>
-
-      <div className="right-section">
-        <div className="input-card">
-          <input
-            type="text"
-            placeholder="Paste Your Link"
-            value={longUrl}
-            onChange={(e) => setLongUrl(e.target.value)}
-          />
-          <button className="shorten-btn" onClick={shortenUrl}>↓</button>
-
-          {shortUrl && (
-            <>
-              <div className="short-link-display">
-                <strong>{shortUrl.replace("https://", "")}</strong>
-                <span className="sub-link">{longUrl}</span>
-              </div>
-              <div className="action-buttons">
-                <button onClick={handleCopy}>{copied ? "Copied!" : "Copy link"}</button>
-                <button>Generate QR 📄</button>
-              </div>
-            </>
-          )}
+        <div className="left-section">
+             <div className="top-buttons">
+          <button
+            onClick={() => setActiveTool("url")}
+            className={activeTool === "url" ? "active-btn" : ""}
+          >
+            URL Shortener
+          </button>
+          <button
+            onClick={() => setActiveTool("qr")}
+            className={activeTool === "qr" ? "active-btn" : ""}
+          >
+            QR Code Generator
+          </button>
         </div>
-        <div className="trusted">
-          <p>Trusted by Leading Companies</p>
-          <div className="logos">
-            <span>Eventbrite</span>
-            <span>Podium</span>
-            <span>Zendesk</span>
-            <span>Databricks</span>
-          </div>
+
+          <h2>Meet Your New</h2>
+          <h1>
+            {activeTool === "url" ? "URL Shortcut!" : "QR Code Generator!"}
+          </h1>
+          <p>
+            {activeTool === "url"
+              ? "Turn those long, messy URLs into clean, catchy shortcuts in just one click. Perfect for sharing anywhere — social media, emails, or surprise notes! Fast, easy, and totally free. ✨🚀"
+              : "Turn anything into a scannable magic square! Make quick, fun, and free QR codes for your links or text in seconds. 🚀✨"}
+          </p>
+        
+          <p className="note-text">Start for Free!</p>
+        </div>
+
+        <div className="right-section">
+          {activeTool === "url" ? <UrlShortener /> : <QrCodeGenerator />}
         </div>
       </div>
-    </div>
+       <div className="footer-text">
+          <p>
+            Copyright © 2025
+            <a href="https://github.com/Vikashverma2/"> Vikash Verma </a> All rights reserved
+          </p>
+        </div>
     </div>
   );
 }
 
-export default ShortcutPage;
+export default Homepage;

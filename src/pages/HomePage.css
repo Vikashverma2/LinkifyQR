@@ -1,44 +1,96 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+}
+
+/* Page container */
+.homepage {
+    height: 100vh;
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Top buttons */
+.top-buttons {
+  margin-bottom: 40px;
+}
+
+.top-buttons button {
+  margin: 0 10px;
+  padding: 10px 24px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top-buttons button.active-btn{
+  background: tomato;
+  color: #fff;
+  box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Shortcut page layout */
 .shortcut-page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 60px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9f9f9;
+  max-width: 1200px;
+  width: 100%;
+}
+.shortcut-page h2{
+    margin-top: 10px;
 }
 
 .left-section {
   flex: 1;
   min-width: 300px;
-  max-width: 450px;
   margin-right: 20px;
 }
 
-.left-section h1 {
-  font-size: 42px;
-  margin: 5px 0 20px;
+.left-section h2 {
+  font-size: 30px;
+  color: #888;
+  margin-bottom: 5px;
 }
 
-.left-section h2 {
-  font-size: 24px;
-  margin: 0;
-  color: #555;
+.left-section h1 {
+  font-size: 52px;
+  color: #000;
+  margin-bottom: 20px;
 }
 
 .left-section p {
+  font-size: 16px;
   color: #555;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .main-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
+  margin-top: 30px;
+  padding: 14px 32px;
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .main-btn:hover {
@@ -46,43 +98,73 @@
 }
 
 .note-text {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 14px;
   color: #888;
 }
 
+/* Right section container */
 .right-section {
-  flex: 1;
-  min-width: 300px;
-  max-width: 450px;
-  background: #fff;
-  padding: 25px;
+  background: #ffffff;
+  padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
 }
-
-.input-card input {
-  width: 80%;
-  padding: 12px;
-  border: 2px solid #eee;
-  border-radius: 8px;
+/* Shared input style remains the same */
+.tool-card input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
   outline: none;
-  margin-right: 8px;
+  transition: all 0.3s;
+  
 }
 
-.shorten-btn {
-  padding: 12px 14px;
-  background: #f3f3f3;
+.tool-card input[type="text"]:focus {
+  border-color: #000;
+}
+
+.tool-card button {
+  width: 100%;
+  padding: 12px 18px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-color: #2d87f0;
+  color: white;
+  
+}
+
+.tool-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Style for the blue button like your first image */
+
+.tool-card .blue-button {
+  background-color: #2d87f0;
+  color: #fff;
+}
+
+.tool-card .blue-button:hover {
+  background-color: #1b5fbf;
 }
 
 .short-link-display {
-  margin-top: 20px;
   background: #f9f9f9;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: left;
 }
 
 .short-link-display strong {
@@ -97,36 +179,77 @@
 }
 
 .action-buttons {
-  display: flex;
-  gap: 10px;
   margin-top: 12px;
 }
 
-.action-buttons button {
-  flex: 1;
-  padding: 10px;
-  background: #eee;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.action-buttons button:hover {
-  background: #ddd;
-}
-
-.trusted {
-  margin-top: 30px;
+.footer-text {
+  margin-top: auto; /* Pushes footer to bottom if using flex column layout */
   text-align: center;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #666;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  width: 100%;
 }
 
-.trusted p {
-  margin-bottom: 10px;
-  color: #777;
+.footer-text a {
+  color: #2d87f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.logos span {
-  margin: 0 10px;
-  color: #aaa;
-  font-size: 14px;
+.footer-text a:hover {
+  color: #1b5fbf;
+  text-decoration: underline;
+}
+
+
+/* Responsive adjustments */
+
+
+/* Tablet screen adjustments (below 992px) */
+@media (max-width: 992px) {
+  .shortcut-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-section {
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .left-section h1 {
+    font-size: 42px;
+  }
+  .left-section h2 {
+    font-size: 26px;
+  }
+  .main-btn {
+    width: 100%;
+  }
+}
+
+/* Mobile screen adjustments (below 480px) */
+@media (max-width: 480px) {
+
+    .top-buttons button{
+      padding: 10px;
+    }
+  .left-section h1 {
+    font-size: 32px;
+  }
+  .left-section h2 {
+    font-size: 20px;
+  }
+  .left-section p {
+    font-size: 14px;
+  }
+  .main-btn {
+    width: 100%;
+  }
+  .right-section {
+    padding: 20px;
+  }
 }

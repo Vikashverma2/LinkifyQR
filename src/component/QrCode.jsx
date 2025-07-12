@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import './QrCode.css'
+import "./QrCode.css";
 
 const QrCode = () => {
   const [img, setImg] = useState("");
   const [loading, setLoading] = useState(false);
-  const [qrData, setQrdata] = useState("");
-  const [qrSize, setQrSize] = useState("200"); 
+  const [qrData, setQrData] = useState("");
+  const [qrSize, setQrSize] = useState("200");
 
   async function generateQR() {
     if (!qrData) {
@@ -13,10 +13,9 @@ const QrCode = () => {
       return;
     }
 
-    // Use default if empty or invalid
     const finalSize = qrSize.trim() === "" ? "200" : qrSize;
-
     setLoading(true);
+
     try {
       const url = `https://api.qrserver.com/v1/create-qr-code/?size=${finalSize}x${finalSize}&data=${encodeURIComponent(
         qrData
@@ -28,6 +27,7 @@ const QrCode = () => {
       setLoading(false);
     }
   }
+
   function downloadQR() {
     if (!img) return;
 
@@ -47,60 +47,49 @@ const QrCode = () => {
   }
 
   return (
-    <>
-      <div className="app-container">
-        <h1>QR CODE GENERATOR</h1>
-        {loading && <p>Please wait...</p>}
-        {img && <img src={img} alt="QR Code" className="qrImage" />}
-        <div>
-          <label htmlFor="dataInput" className="input-label">
-            Data for QR code:
-          </label>
-          <input
-            type="text"
-            value={qrData}
-            id="dataInput"
-            placeholder="Enter data for QR code"
-            onChange={(event) => setQrdata(event.target.value)}
-          />
+    <div className="qr-page-container">
+      <div className="qr-card">
+        <h2>QR Code Generator</h2>
+        <p className="description">
+          Instantly create and download custom QR codes for your links or text. Fast, simple, and free!
+        </p>
 
-          <label htmlFor="sizeInput" className="input-label">
-            Image size (e.g., 150):
-          </label>
-          <input
-            type="number"
-            value={qrSize}
-            id="sizeInput"
-            placeholder="Enter image size"
-            onChange={(event) => setQrSize(event.target.value)}
-          />
+        {loading && <p>Generating...</p>}
+        {img && <img src={img} alt="QR Code" className="qr-image" />}
 
-          <div className="buttonMobileView">
-            <button
-              className="generate-button"
-              disabled={loading}
-              onClick={generateQR}
-            >
-              Generate QR code
-            </button>
-            <button
-              className="download-button"
-              onClick={downloadQR}
-              disabled={!img}
-            >
-              Download QR code
-            </button>
-          </div>
+        <input
+          type="text"
+          value={qrData}
+          placeholder="Enter data or URL"
+          onChange={(e) => setQrData(e.target.value)}
+        />
+        <input
+          type="number"
+          value={qrSize}
+          placeholder="Size (e.g., 150)"
+          onChange={(e) => setQrSize(e.target.value)}
+        />
+
+        <div className="button-group">
+          <button
+            className="generate-btn"
+            disabled={loading}
+            onClick={generateQR}
+          >
+            Generate
+          </button>
+          <button
+            className="download-btn"
+            onClick={downloadQR}
+            disabled={!img}
+          >
+            Download
+          </button>
         </div>
-        <div className="copyright">
-          <p>
-            Copyright © 2025
-            <a href="https://github.com/Vikashverma2/"> Vikash Verma </a> All
-            rights reserved
-          </p>
-        </div>
+
+       
       </div>
-    </>
+    </div>
   );
 };
 

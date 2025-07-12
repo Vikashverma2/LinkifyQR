@@ -142,21 +142,23 @@ html {
   color: white;
   
 }
+.tool-card button:hover{
+    background-color: #1b5fbf;
+}
 
 .tool-card button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Style for the blue button like your first image */
 
 .tool-card .blue-button {
-  background-color: #2d87f0;
+  background-color: #28a745;
   color: #fff;
 }
 
 .tool-card .blue-button:hover {
-  background-color: #1b5fbf;
+  background-color: #1e7e34;
 }
 
 .short-link-display {

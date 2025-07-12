@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./QrCode.css";
 
 const QrCode = () => {
   const [img, setImg] = useState("");
@@ -29,35 +28,34 @@ const QrCode = () => {
   }
 
   function downloadQR() {
-  if (!img) return;
+    if (!img) return;
 
-  fetch(img)
-    .then((response) => response.blob())
-    .then((blob) => {
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "qrCode.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    fetch(img)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "qrCode.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-    
-      setQrData("");
-      setQrSize("200");
-      setImg("");
-    })
-    .catch((error) => {
-      console.log("Error in downloading QR code:", error);
-    });
-}
-
+        setQrData("");
+        setQrSize("200");
+        setImg("");
+      })
+      .catch((error) => {
+        console.log("Error in downloading QR code:", error);
+      });
+  }
 
   return (
     <div className="qr-page-container">
       <div className="qr-card">
         <h2>QR Code Generator</h2>
         <p className="description">
-          Instantly create and download custom QR codes for your links or text. Fast, simple, and free!
+          Instantly create and download custom QR codes for your links or text.
+          Fast, simple, and free!
         </p>
 
         {loading && <p>Generating...</p>}
@@ -71,7 +69,6 @@ const QrCode = () => {
         />
         <input
           type="number"
-         
           placeholder="Size (e.g., 200)"
           onChange={(e) => setQrSize(e.target.value)}
         />
@@ -84,16 +81,10 @@ const QrCode = () => {
           >
             Generate
           </button>
-          <button
-            className="download-btn"
-            onClick={downloadQR}
-            disabled={!img}
-          >
+          <button className="download-btn" onClick={downloadQR} disabled={!img}>
             Download
           </button>
         </div>
-
-       
       </div>
     </div>
   );

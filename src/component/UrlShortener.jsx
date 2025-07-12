@@ -30,19 +30,17 @@ const UrlShortener = () => {
     }
   };
 
-const handleCopy = () => {
-  navigator.clipboard.writeText(shortUrl).then(() => {
-    setCopied(true);
-    setLongUrl(""); 
-    setTimeout(() => setCopied(false), 2000);
-  });
-};
-
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shortUrl).then(() => {
+      setCopied(true);
+      setLongUrl("");
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <div className="tool-card">
-
-        <h2>URL Shortener</h2>
+      <h2>URL Shortener</h2>
       <input
         type="text"
         placeholder="Paste Your Link"
@@ -57,13 +55,9 @@ const handleCopy = () => {
         <>
           <div className="short-link-display">
             <strong>{shortUrl.replace("https://", "")}</strong>
-           
           </div>
           <div className="action-buttons">
-            <button
-              className="blue-button"
-              onClick={handleCopy}
-            >
+            <button className="blue-button" onClick={handleCopy}>
               {copied ? "Copied!" : "Copy link"}
             </button>
           </div>

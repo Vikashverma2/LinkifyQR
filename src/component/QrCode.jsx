@@ -71,8 +71,8 @@ const QrCode = () => {
         />
         <input
           type="number"
-          value={qrSize}
-          placeholder="Size (e.g., 150)"
+         
+          placeholder="Size (e.g., 200)"
           onChange={(e) => setQrSize(e.target.value)}
         />
 

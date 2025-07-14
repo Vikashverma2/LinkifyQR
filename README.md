@@ -48,7 +48,7 @@ Built with React.js, this application offers a smooth, fast, and interactive use
 Clone the project
 
 ```bash
-  git clone https://github.com/your-username/LinkifyQR.git
+  git clone https://github.com/Vikashverma2/LinkifyQR.git
 ```
 
 

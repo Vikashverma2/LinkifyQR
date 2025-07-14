@@ -9,19 +9,19 @@ body,
 html {
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9f9f9;
+  background: #121212;
+  color: #e0e0e0;
+  transition: all 0.4s ease;
 }
 
 /* Page container */
 .homepage {
-  height: 100vh;
-  padding: 50px 5%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Top buttons */
 .top-buttons {
   margin-bottom: 40px;
 }
@@ -30,28 +30,34 @@ html {
   margin: 0 10px;
   padding: 10px 24px;
   font-size: 15px;
-  border: 2px solid #e0e0e0;
-  background: #fff;
+  border: 2px solid #333;
+  background: #1e1e1e;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.top-buttons button:hover {
+  background: #333;
+  transform: scale(1.05);
 }
 
 .top-buttons button.active-btn {
   background: tomato;
   color: #fff;
-  box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Layout */
 .shortcut-page {
+  padding: 4% 20px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
-}
-.shortcut-page h2 {
-  margin-top: 10px;
 }
 
 .left-section {
@@ -64,67 +70,71 @@ html {
   font-size: 30px;
   color: #888;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 .left-section h1 {
   font-size: 52px;
-  color: #000;
+  color: #fff;
   margin-bottom: 20px;
 }
 
 .left-section p {
   font-size: 16px;
-  color: #555;
+  color: #bbb;
   line-height: 1.6;
 }
 
 .main-btn {
   margin-top: 30px;
   padding: 14px 32px;
-  background-color: #000;
+  background-color: #2d87f0;
   color: #fff;
   border: none;
   border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .main-btn:hover {
-  background-color: #333;
+  background-color: #1b5fbf;
+  transform: translateY(-2px);
 }
 
 .note-text {
   margin-top: 15px;
   font-size: 14px;
-  color: #888;
+  color: #777;
 }
 
 .right-section {
-  background: #ffffff;
+  background: #1e1e1e;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   max-width: 420px;
   width: 100%;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 /* URL Generator */
-
 .tool-card input[type="text"] {
   width: 100%;
   padding: 14px 18px;
   margin-bottom: 10px;
   margin-top: 20px;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #333;
   border-radius: 12px;
+  background: #121212;
+  color: #fff;
   outline: none;
-  transition: all 0.3s;
+  transition: border-color 0.3s, background 0.3s;
 }
 
 .tool-card input[type="text"]:focus {
-  border-color: #000;
+  border-color: #2d87f0;
 }
 
 .tool-card button {
@@ -134,12 +144,14 @@ html {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.4s;
   background-color: #2d87f0;
   color: white;
 }
+
 .tool-card button:hover {
   background-color: #1b5fbf;
+  transform: translateY(-2px);
 }
 
 .tool-card button:disabled {
@@ -149,25 +161,26 @@ html {
 
 .tool-card .blue-button {
   background-color: #28a745;
-  color: #fff;
 }
 
 .tool-card .blue-button:hover {
   background-color: #1e7e34;
+  transform: translateY(-2px);
 }
 
 .short-link-display {
-  background: #f9f9f9;
+  background: #222;
   padding: 14px;
   border-radius: 10px;
   margin-top: 15px;
   text-align: left;
+  color: #fff;
 }
 
 .short-link-display strong {
   display: block;
   font-size: 16px;
-  color: #222;
+  color: #fff;
 }
 
 .sub-link {
@@ -180,7 +193,6 @@ html {
 }
 
 /* QR Code Generator */
-
 .qr-page-container {
   display: flex;
   justify-content: center;
@@ -194,37 +206,42 @@ html {
 
 .qr-card h2 {
   font-size: 28px;
-  color: #222;
+  color: #fff;
   margin-bottom: 12px;
 }
 
 .qr-card p.description {
   font-size: 14px;
-  color: #666;
+  color: #bbb;
   margin-bottom: 25px;
 }
 
 .qr-card input[type="text"],
-/* Copyright © Vikash Verma */
 .qr-card input[type="number"] {
   width: 100%;
   padding: 12px;
-  border: 2px solid #eee;
+  border: 2px solid #333;
   border-radius: 10px;
   margin-bottom: 15px;
-  transition: border-color 0.3s ease;
+  background: #121212;
+  color: #fff;
+  transition: border-color 0.3s, background 0.3s;
 }
 
 .qr-card input[type="text"]:focus,
 .qr-card input[type="number"]:focus {
   border-color: #2d87f0;
-  outline: none;
 }
 
 .qr-card .qr-image {
   margin: 20px 0;
   width: 60%;
   border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.qr-card .qr-image:hover {
+  transform: scale(1.05);
 }
 
 .qr-card .button-group {
@@ -240,7 +257,7 @@ html {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .qr-card button.generate-btn {
@@ -250,6 +267,7 @@ html {
 
 .qr-card button.generate-btn:hover {
   background-color: #1b5fbf;
+  transform: translateY(-2px);
 }
 
 .qr-card button.download-btn {
@@ -259,6 +277,7 @@ html {
 
 .qr-card button.download-btn:hover {
   background-color: #1e7e34;
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -268,9 +287,9 @@ html {
   text-align: center;
   padding: 10px 0;
   font-size: 13px;
-  color: #666;
-  background-color: #f9f9f9;
-  border-top: 1px solid #eee;
+  color: #777;
+  background-color: #1e1e1e;
+  border-top: 1px solid #333;
   width: 100%;
 }
 
@@ -286,7 +305,6 @@ html {
 }
 
 /* Responsive adjustments */
-
 @media (max-width: 992px) {
   .shortcut-page {
     flex-direction: column;
@@ -308,12 +326,18 @@ html {
   }
 }
 
-/* Mobile screen adjustments (below 480px) */
-
 @media (max-width: 480px) {
-  .top-buttons button {
-    padding: 10px;
+  .top-buttons {
+  
+    display: flex;
+    padding: 20px 0px;
+   justify-content: center;
+    
   }
+   .top-buttons button{
+    padding: 10px;
+    font-size: 12px;
+   }
   .left-section h1 {
     font-size: 32px;
   }
@@ -333,3 +357,4 @@ html {
     flex-direction: column;
   }
 }
+

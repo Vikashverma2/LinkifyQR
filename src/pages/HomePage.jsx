@@ -8,6 +8,7 @@ function Homepage() {
 
   return (
     <div className="homepage">
+
       <div className="shortcut-page">
         <div className="left-section">
           <div className="top-buttons">

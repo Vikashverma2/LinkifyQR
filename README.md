@@ -1,100 +1,70 @@
-# QR Code Generator
 
-Generate QR codes easily with this simple and efficient QR Code Generator. Built with Vite and React, this project provides a fast and modern web application for creating QR codes for various purposes.
+# 🌟 LinkifyQR
+ 
 
-## Table of Contents
+LinkifyQR is a modern and easy-to-use web application that allows users to generate short URLs and create QR codes instantly, all in one place.
 
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-
-## Features
-
-- Fast and optimized development environment with Vite.
-- Simple and intuitive user interface for generating QR codes.
-- Customize QR code content and size.
-- Download QR codes as image files.
-
-## Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
-
-## Installation
-
-1. **Create a folder:**
-
-   create a folder in your machine (ex:QR-codeGenerator)
-   
-3. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/iamsuriyan/QR-codeGenerator.git
-    ```
-
-4. **Navigate to the project directory:**
-
-    ```bash
-    cd QR-codeGenerator
-    ```
-
-5. **Install dependencies using npm or yarn:**
-
-    ```bash
-    # Using npm
-    npm install
-
-    # Using yarn
-    yarn
-    ```
-
-## Usage
-
-1. **Start the development server:**
-
-    ```bash
-    # Using npm
-    npm run dev
-
-    # Using yarn
-    yarn dev
-    ```
-
-2. **Open your browser and go to [http://localhost:(host number displyed in your code editor)] to access the QR Code Generator.**
-
-3. **Customize the QR code options and generate your QR code.**
-
-4. **Download the generated QR code as an image file.**
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
-
-1. **Fork the repository.**
-2. **Create a new branch:**
-
-    ```bash
-    git checkout -b feature/new-feature
-    ```
-
-3. **Make your changes and commit them:**
-
-    ```bash
-    git commit -m 'Add new feature'
-    ```
-
-4. **Push to the branch:**
-
-    ```bash
-    git push origin feature/new-feature
-    ```
-
-5. **Submit a pull request.**
+Built with React.js, this application offers a smooth, fast, and interactive user experience. We use external APIs to generate real-time short URLs and dynamic QR codes — making it super simple for anyone to share and scan links anywhere.
 
 
----
 
+
+## ✨ Features
+
+ 🔗 URL Shortener: Quickly convert long and messy URLs into clean, shareable short links.
+ 
+📱 QR Code Generator: Create custom QR codes for any text or link, perfect for social media, print, or quick sharing.
+
+⚡ Real-time generation: Both tools work instantly using APIs, so no waiting or manual refresh needed.
+
+💻 Built with React.js: Smooth, component-based design with a modern interface.
+
+
+## 💡 Technologies Used
+
+
+- React.js — for building a fast, dynamic front-end.
+
+- TinyURL API — for generating short URLs.
+
+- QR Code API — for generating custom QR codes in real time.
+
+- CSS (custom + responsive design) — for a clean, dark-themed UI.
+
+
+
+
+
+
+
+
+## Screenshots
+
+![App Screenshot](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhELwojPYP6TQTBoIMgm2PErAb-ilceTeL-ZWnYlW_iGfEw6DvzuoJtn6D23LgxesdVM1NAHY7U2ARuS4vkNhkRXZkuPBJmr4DaQyg1Fpt4o3RFqhRfpVbFquFljV_UBHLSOHP7wW8YAHFgai4YozPOQmrd0Tg4vPgEwHacZ6sj30gQUwgIuN2W2TR0gVfd/s1899/LinkifyQR.jpeg)
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/your-username/LinkifyQR.git
+```
+
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Demo
+
+[Click Here](https://linkifyqr.onrender.com/)
